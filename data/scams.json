@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Alpha Tours Japan",
+    "aliases": ["Alpha Tours", "アルファツアーズジャパン", "アルファツアーズ"],
+    "status": "danger",
+    "patterns": ["Fake guide — actually just a driver", "Forces you to leave 5-star reviews (grabs your phone)", "Lies about credentials", "Pockets parking fees"],
+    "sources": [
+      "https://www.tripadvisor.com/Attraction_Review-g298564-d28126933-Reviews-Alpha_Tours_Japan-Kyoto_Kyoto_Prefecture_Kinki.html"
+    ],
+    "last_verified": "2026-03-26"
+  },
+  {
+    "name": "Japan Custom Tours",
+    "aliases": ["Japan Custom Tour", "ジャパンカスタムツアーズ"],
+    "status": "danger",
+    "patterns": ["Demands bank wire transfer only", "Goes silent after payment", "Reported loss of $2,260"],
+    "sources": [
+      "https://www.tripadvisor.com/ShowTopic-g294232-i525-k14760497-Be_careful_Lost_2260_to_Japan_Custom_Tours_despite_its_go-Japan.html"
+    ],
+    "last_verified": "2026-03-26"
+  },
+  {
+    "name": "JAPAN PASSION",
+    "aliases": ["Japan Passion", "ジャパンパッション"],
+    "status": "danger",
+    "patterns": ["Fake travel agency", "No company address or phone number", "Wire transfer only", "Invoices with no logo or branding"],
+    "sources": [
+      "https://www.tripadvisor.com/ShowTopic-g1-i12334-k7407107-A_fake_travel_agency_to_be_avoided_JAPAN_PASSION-Holiday_Travel.html"
+    ],
+    "last_verified": "2026-03-26"
+  },
+  {
+    "name": "Kinkakuji Volunteer Guides",
+    "aliases": ["volunteer guide kinkakuji", "free guide kyoto", "金閣寺ボランティアガイド", "金閣寺 ガイド"],
+    "status": "danger",
+    "patterns": ["Pose as free volunteer guides, then demand tips or force you to buy things", "Hang around the Kinkakuji bus stop area", "Kyoto city has posted official warning signs about them"],
+    "sources": [
+      "https://japantoday.com/category/national/tourists-warned-about-fake-volunteer-guide-near-kinkakuji-in-kyoto"
+    ],
+    "last_verified": "2026-03-26"
+  }
+]
