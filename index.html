@@ -4,6 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google" content="notranslate">
+  <meta name="description" content="Check if a tour company or guide in Japan is safe before you book. Search our database of reported scams.">
+  <meta property="og:title" content="Japan Tour Scam Checker">
+  <meta property="og:description" content="Check if a tour company or guide in Japan is safe before you book. Search our database of reported scams.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://humancronadmin.github.io/japan-scam-checker/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Japan Tour Scam Checker">
+  <meta name="twitter:description" content="Check if a tour company or guide in Japan is safe before you book. Search our database of reported scams.">
   <title>Japan Tour Scam Checker</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -76,6 +84,11 @@
       .report { padding: 16px; }
       footer { padding: 20px 16px; }
     }
+
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+    }
   </style>
 </head>
 <body>
@@ -88,7 +101,8 @@
 <div class="container">
 
   <div class="search-box">
-    <input type="text" id="query" placeholder="Enter company name (English or Japanese)" />
+    <label for="query" class="sr-only">Company name</label>
+    <input type="text" id="query" placeholder="Enter company name (English or Japanese)" maxlength="200" />
     <button onclick="checkScam()">Check</button>
   </div>
 
@@ -105,8 +119,8 @@
     <h2 id="unknown-name"></h2>
     <p style="margin-top:8px;color:#666;font-size:.95rem;">We couldn't find this company in our database. That doesn't mean it's safe. Please verify using the steps below:</p>
     <ul style="margin:12px 0 0 20px;">
-      <li>Search on <a href="https://www.tripadvisor.com" target="_blank">Tripadvisor</a> and <a href="https://www.google.com/maps" target="_blank">Google Maps</a></li>
-      <li>Check if the guide holds a <a href="https://www.japan.travel/en/plan/how-to-book-a-certified-tour-guide/" target="_blank">JNTO Licensed Guide certificate</a></li>
+      <li>Search on <a href="https://www.tripadvisor.com" target="_blank" rel="noopener noreferrer">Tripadvisor</a> and <a href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer">Google Maps</a></li>
+      <li>Check if the guide holds a <a href="https://www.japan.travel/en/plan/how-to-book-a-certified-tour-guide/" target="_blank" rel="noopener noreferrer">JNTO Licensed Guide certificate</a></li>
       <li>Never pay by wire transfer — use credit card only</li>
     </ul>
   </div>
@@ -114,15 +128,15 @@
   <div class="cta" id="cta-box" style="display:none;">
     <h3>✅ Book safely through verified platforms:</h3>
     <div class="cta-buttons">
-      <a class="cta-btn getyourguide" href="https://www.getyourguide.com/kyoto-l189/" target="_blank">GetYourGuide Kyoto</a>
-      <a class="cta-btn viator" href="https://www.viator.com/Kyoto/d332-ttd" target="_blank">Viator Kyoto Tours</a>
+      <a class="cta-btn getyourguide" href="https://www.getyourguide.com/kyoto-l189/" target="_blank" rel="noopener noreferrer">GetYourGuide Kyoto</a>
+      <a class="cta-btn viator" href="https://www.viator.com/Kyoto/d332-ttd" target="_blank" rel="noopener noreferrer">Viator Kyoto Tours</a>
     </div>
   </div>
 
   <div class="report">
     <h3>📢 Know a scam not listed here?</h3>
     <p>Help protect other travelers by reporting it.</p>
-    <a href="https://forms.gle/p7B2kSSQvhmNrB6V8" target="_blank">→ Submit a scam report</a>
+    <a href="https://forms.gle/p7B2kSSQvhmNrB6V8" target="_blank" rel="noopener noreferrer">→ Submit a scam report</a>
   </div>
 
 </div>
@@ -163,9 +177,24 @@
     if (match && match.status === 'danger') {
       document.getElementById('danger-name').textContent = match.name;
       const ul = document.getElementById('danger-patterns');
-      ul.innerHTML = match.patterns.map(p => `<li>${p}</li>`).join('');
+      ul.innerHTML = '';
+      match.patterns.forEach(p => {
+        const li = document.createElement('li');
+        li.textContent = p;
+        ul.appendChild(li);
+      });
       const src = document.getElementById('danger-sources');
-      src.innerHTML = '🔗 Sources: ' + match.sources.map(u => `<a href="${u}" target="_blank">${u}</a>`).join(', ');
+      src.innerHTML = '';
+      src.appendChild(document.createTextNode('🔗 Sources: '));
+      match.sources.forEach((u, i) => {
+        if (i > 0) src.appendChild(document.createTextNode(', '));
+        const a = document.createElement('a');
+        a.href = u;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.textContent = u;
+        src.appendChild(a);
+      });
       document.getElementById('danger-verified').textContent = `Last verified: ${match.last_verified}`;
       document.getElementById('result-danger').classList.add('show');
     } else {
