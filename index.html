@@ -229,6 +229,19 @@
 
 </div>
 
+<script>
+  // Service Loop — Search Tracking
+  var GAS_ENDPOINT = ''; // ← GAS Web App URLをここに設定
+  function trackEvent(service, query, status) {
+    if (!GAS_ENDPOINT || !query || !query.trim()) return;
+    fetch(GAS_ENDPOINT, {
+      method: 'POST', mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ service: service, query: query.trim().substring(0, 200), status: status, user_agent: navigator.userAgent })
+    }).catch(function() {});
+  }
+</script>
+
 <footer>
   Data sourced from Tripadvisor, Reddit r/JapanTravel, Japan Today, Unseen Japan, and U.S. Embassy advisories. Updated weekly.<br>
   <span id="footer-count"></span>
@@ -348,6 +361,7 @@
       });
       document.getElementById('danger-verified').textContent = `Last verified: ${match.last_verified}`;
       document.getElementById('result-danger').classList.add('show');
+      trackEvent('japan-scam-checker', q, 'danger');
     } else if (match && match.status === 'safe') {
       document.getElementById('safe-name').textContent = match.name;
       const ul = document.getElementById('safe-patterns');
@@ -371,9 +385,11 @@
       });
       document.getElementById('safe-verified').textContent = `Last verified: ${match.last_verified}`;
       document.getElementById('result-safe').classList.add('show');
+      trackEvent('japan-scam-checker', q, 'safe');
     } else {
       document.getElementById('unknown-name').textContent = `"${document.getElementById('query').value.trim()}"`;
       document.getElementById('result-unknown').classList.add('show');
+      trackEvent('japan-scam-checker', q, 'not_found');
     }
 
     document.getElementById('cta-box').style.display = 'block';
