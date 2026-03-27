@@ -234,11 +234,8 @@
   var GAS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxNgRSQnoevLcHrBPRtUSWEa5FOVikW8b5qH7Rv3aiK7KQ7a2dSKrGLVSgQxFNu9pBH/exec';
   function trackEvent(service, query, status) {
     if (!GAS_ENDPOINT || !query || !query.trim()) return;
-    fetch(GAS_ENDPOINT, {
-      method: 'POST', mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ service: service, query: query.trim().substring(0, 200), status: status, user_agent: navigator.userAgent })
-    }).catch(function() {});
+    var payload = { service: service, query: query.trim().substring(0, 200), status: status, user_agent: navigator.userAgent };
+    navigator.sendBeacon(GAS_ENDPOINT, new Blob([JSON.stringify(payload)], { type: 'application/json' }));
   }
 </script>
 
