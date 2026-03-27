@@ -231,7 +231,7 @@
 
 <script>
   // Service Loop — Search Tracking
-  var GAS_ENDPOINT = ''; // ← GAS Web App URLをここに設定
+  var GAS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxNgRSQnoevLcHrBPRtUSWEa5FOVikW8b5qH7Rv3aiK7KQ7a2dSKrGLVSgQxFNu9pBH/exec';
   function trackEvent(service, query, status) {
     if (!GAS_ENDPOINT || !query || !query.trim()) return;
     fetch(GAS_ENDPOINT, {
