@@ -3,6 +3,8 @@
     "name": "Alpha Tours Japan",
     "aliases": ["Alpha Tours", "アルファツアーズジャパン", "アルファツアーズ"],
     "status": "danger",
+    "category": "tour_scam",
+    "city": "Kyoto",
     "patterns": ["Fake guide — actually just a driver", "Forces you to leave 5-star reviews (grabs your phone)", "Lies about credentials", "Pockets parking fees"],
     "sources": [
       "https://www.tripadvisor.com/Attraction_Review-g298564-d28126933-Reviews-Alpha_Tours_Japan-Kyoto_Kyoto_Prefecture_Kinki.html"
@@ -13,6 +15,8 @@
     "name": "Japan Custom Tours",
     "aliases": ["Japan Custom Tour", "ジャパンカスタムツアーズ"],
     "status": "danger",
+    "category": "tour_scam",
+    "city": "nationwide",
     "patterns": ["Demands bank wire transfer only", "Goes silent after payment", "Reported loss of $2,260"],
     "sources": [
       "https://www.tripadvisor.com/ShowTopic-g294232-i525-k14760497-Be_careful_Lost_2260_to_Japan_Custom_Tours_despite_its_go-Japan.html"
@@ -23,6 +27,8 @@
     "name": "JAPAN PASSION",
     "aliases": ["Japan Passion", "ジャパンパッション"],
     "status": "danger",
+    "category": "tour_scam",
+    "city": "nationwide",
     "patterns": ["Fake travel agency", "No company address or phone number", "Wire transfer only", "Invoices with no logo or branding"],
     "sources": [
       "https://www.tripadvisor.com/ShowTopic-g1-i12334-k7407107-A_fake_travel_agency_to_be_avoided_JAPAN_PASSION-Holiday_Travel.html"
@@ -33,10 +39,294 @@
     "name": "Kinkakuji Volunteer Guides",
     "aliases": ["volunteer guide kinkakuji", "free guide kyoto", "金閣寺ボランティアガイド", "金閣寺 ガイド"],
     "status": "danger",
+    "category": "street_scam",
+    "city": "Kyoto",
     "patterns": ["Pose as free volunteer guides, then demand tips or force you to buy things", "Hang around the Kinkakuji bus stop area", "Kyoto city has posted official warning signs about them"],
     "sources": [
       "https://japantoday.com/category/national/tourists-warned-about-fake-volunteer-guide-near-kinkakuji-in-kyoto"
     ],
     "last_verified": "2026-03-26"
+  },
+  {
+    "name": "Kabukicho Bar Scam (Bottakuri)",
+    "aliases": ["ぼったくりバー", "Bottakuri Bar", "Rip-off Bar", "Kabukicho Izakaya Scam"],
+    "status": "danger",
+    "category": "bar_scam",
+    "city": "Tokyo",
+    "patterns": [
+      "Street touts lure tourists into bars with promises of cheap all-you-can-drink deals",
+      "Final bill is 5-10x higher than quoted price with hidden 'seat charges'",
+      "Intimidation tactics used when customers refuse to pay",
+      "Some bars block exits until victims pay",
+      "January 2024: 15 people arrested for fraudulent bar operations in Kabukicho"
+    ],
+    "sources": [
+      "https://japantoday.com/category/features/lifestyle/how-a-bar-in-kabukicho-scammed-one-diner-out-of-their-money-and-how-it-can-happen-to-you-too",
+      "https://unseen-japan.com/izakaya-kabukicho-bar-fraud/"
+    ],
+    "last_verified": "2026-03-27"
+  },
+  {
+    "name": "Roppongi Drink Spiking Scam",
+    "aliases": ["Roppongi Bar Scam", "六本木ぼったくり", "Roppongi Credit Card Fraud"],
+    "status": "danger",
+    "category": "bar_scam",
+    "city": "Tokyo",
+    "patterns": [
+      "Friendly strangers or touts invite tourists to bars in Roppongi",
+      "Drinks are spiked with drugs causing unconsciousness",
+      "Credit cards stolen or charged thousands of dollars while victim is unconscious",
+      "U.S. Embassy has issued official warnings about this scam"
+    ],
+    "sources": [
+      "https://japantoday.com/category/crime/u-s-embassy-warns-citizens-about-drink-spiking-in-roppongi",
+      "https://www.stripes.com/theaters/asia_pacific/tokyo-police-beef-up-warnings-about-rip-off-bar-scams-targeting-foreigners-as-tourist-numbers-surge-1.607680"
+    ],
+    "last_verified": "2026-03-27"
+  },
+  {
+    "name": "Fake Monk Scam",
+    "aliases": ["偽僧侶", "Fake Buddhist Monk", "Temple Donation Scam"],
+    "status": "danger",
+    "category": "street_scam",
+    "city": "Tokyo",
+    "patterns": [
+      "Person dressed as Buddhist monk approaches tourists at Ueno, Asakusa, and tourist areas",
+      "Gives a 'blessed' bracelet or charm, then demands donation of 10,000-20,000 yen",
+      "Shows fake donation book with inflated amounts to pressure victims",
+      "Real monks NEVER approach tourists to sell items or solicit donations on the street"
+    ],
+    "sources": [
+      "https://japantoday.com/category/crime/fake-monks-scam-foreign-tourists-out-of-their-cash-in-tokyo",
+      "https://soranews24.com/2023/10/03/fake-monk-scams-foreign-tourists-out-of-their-cash-in-tokyo/"
+    ],
+    "last_verified": "2026-03-27"
+  },
+  {
+    "name": "Shirotaku (Unlicensed Taxi)",
+    "aliases": ["白タク", "White Taxi", "Illegal Taxi", "Airport Gypsy Cab"],
+    "status": "danger",
+    "category": "taxi_scam",
+    "city": "nationwide",
+    "patterns": [
+      "Unlicensed private cars (white license plates) solicit tourists at Haneda, Narita airports",
+      "No meter — charge arbitrary inflated prices, often 3-5x normal fare",
+      "No insurance coverage if accident occurs",
+      "Legal taxis have GREEN license plates — always check"
+    ],
+    "sources": [
+      "https://www.tokyoweekender.com/japan-life/news-and-opinion/unlicensed-taxi-drivers-target-foreign-visitors-at-haneda-airport/",
+      "https://www.japantimes.co.jp/news/2024/08/12/japan/society/illegal-taxis/"
+    ],
+    "last_verified": "2026-03-27"
+  },
+  {
+    "name": "Charity Petition / Donation Scam",
+    "aliases": ["募金詐欺", "Fake Charity", "Disaster Relief Scam", "Thai Orphan Scam"],
+    "status": "danger",
+    "category": "street_scam",
+    "city": "Tokyo",
+    "patterns": [
+      "Well-dressed people approach tourists in Shibuya, Shinjuku, Harajuku claiming to collect for disaster relief",
+      "Show fake official documents and fabricated donation receipts with large amounts",
+      "Pressure tourists to donate 5,000-10,000 yen or more",
+      "Money goes directly to scammers, not to any charity"
+    ],
+    "sources": [
+      "https://blog.gaijinpot.com/common-tourist-scams-in-japan/",
+      "https://japantoday.com/category/features/lifestyle/common-tourist-scams-in-japan-how-to-recognize-them-and-tips-to-avoid-falling-victim"
+    ],
+    "last_verified": "2026-03-27"
+  },
+  {
+    "name": "Fake Ticket Resale (Ghibli, Nintendo, USJ)",
+    "aliases": ["チケット転売詐欺", "Scalper Tickets", "Fake Attraction Tickets", "Viagogo Japan Tickets"],
+    "status": "danger",
+    "category": "ticket_scam",
+    "city": "nationwide",
+    "patterns": [
+      "Websites sell 'Ghibli Museum tickets' at $50-100+ when official price is ~1,000 yen",
+      "Tickets are fake or have wrong name (Ghibli requires ID matching ticket name)",
+      "Claim 'guaranteed availability' even when officially sold out",
+      "Same scam applies to Nintendo Museum, USJ Express Passes",
+      "Victims denied entry at gate and cannot get refund"
+    ],
+    "sources": [
+      "https://japantoday.com/category/features/ghibli-museum-set-to-crack-down-on-ticket-scalping-and-resales-with-pre-entry-id-checks"
+    ],
+    "last_verified": "2026-03-27"
+  },
+  {
+    "name": "Booking.com Fake Hotel Listing",
+    "aliases": ["偽ホテル", "Ghost Hotel", "Abandoned House Hotel Scam"],
+    "status": "danger",
+    "category": "accommodation_scam",
+    "city": "nationwide",
+    "patterns": [
+      "Fake hotels listed on Booking.com with stolen photos from legitimate properties",
+      "Tourists arrive to find abandoned houses or non-existent addresses",
+      "2023 Chiba case: tourist paid 33,000 yen for 'luxury villa' that was an abandoned house",
+      "Additional unrecoverable trip costs (car rental, transport) totaling ~100,000 yen"
+    ],
+    "sources": [
+      "https://unseen-japan.com/japan-booking-com-tourist-trap/",
+      "https://japantoday.com/category/crime/over-100-hotels-in-japan-fall-victim-to-booking.com-phishing-scams"
+    ],
+    "last_verified": "2026-03-27"
+  },
+  {
+    "name": "Dotonbori / Namba Street Tout Scam",
+    "aliases": ["道頓堀キャッチ", "Osaka Bar Tout Scam", "Namba Rip-off"],
+    "status": "danger",
+    "category": "bar_scam",
+    "city": "Osaka",
+    "patterns": [
+      "Street touts in Dotonbori and Namba lure tourists into overpriced bars and restaurants",
+      "Promise cheap deals but final bill includes massive hidden charges",
+      "Some touts specifically target foreign tourists with English solicitation",
+      "Intimidation if customers challenge the bill"
+    ],
+    "sources": [
+      "https://blog.gaijinpot.com/common-tourist-scams-in-japan/",
+      "https://unseen-japan.com/tourist-fraud-japan-increasing/"
+    ],
+    "last_verified": "2026-03-27"
+  },
+  {
+    "name": "Train Station 'Lost Wallet' Beggar",
+    "aliases": ["偽困窮者", "Stranded Foreigner Scam", "Marc Scam"],
+    "status": "danger",
+    "category": "street_scam",
+    "city": "Tokyo",
+    "patterns": [
+      "Foreigner boards busy trains claiming to have lost wallet and needs money for airport",
+      "Asks for 5,000-10,000 yen claiming it's an emergency",
+      "Operates repeatedly on the same train lines",
+      "Reported multiple times on Reddit r/JapanTravel and r/japanlife"
+    ],
+    "sources": [
+      "https://japantoday.com/category/features/lifestyle/common-tourist-scams-in-japan-how-to-recognize-them-and-tips-to-avoid-falling-victim",
+      "https://blog.gaijinpot.com/common-tourist-scams-in-japan/"
+    ],
+    "last_verified": "2026-03-27"
+  },
+  {
+    "name": "Tourist Price Gouging (Dual Pricing)",
+    "aliases": ["外国人価格", "Foreigner Price", "Tourist Menu Scam"],
+    "status": "danger",
+    "category": "shopping_scam",
+    "city": "nationwide",
+    "patterns": [
+      "Some restaurants charge higher prices to foreign tourists than to Japanese customers",
+      "Separate 'English menu' with inflated prices compared to Japanese menu",
+      "Adding unexplained charges to bills for foreign customers",
+      "Overcharging at drugstores by scanning wrong items"
+    ],
+    "sources": [
+      "https://unseen-japan.com/tourist-fraud-japan-increasing/"
+    ],
+    "last_verified": "2026-03-27"
+  },
+  {
+    "name": "Illegal Airbnb / Vacation Rental",
+    "aliases": ["違法民泊", "Fake Airbnb Listing", "Illegal Minpaku"],
+    "status": "danger",
+    "category": "accommodation_scam",
+    "city": "nationwide",
+    "patterns": [
+      "Unlicensed properties listed on Airbnb operating illegally under Japan's minpaku law",
+      "Host asks guests to 'sneak in' during security guard shift changes",
+      "Fake listings with stolen photos — property doesn't exist",
+      "Host pressures to pay via PayPal/bank transfer instead of through platform"
+    ],
+    "sources": [
+      "https://unseen-japan.com/tourist-fraud-japan-increasing/"
+    ],
+    "last_verified": "2026-03-27"
+  },
+  {
+    "name": "Nightlife Credit Card Fraud ($6,000 scam)",
+    "aliases": ["Shibuya Nightlife Scam", "All-inclusive Night Out Scam", "Tokyo Nightlife Scam"],
+    "status": "danger",
+    "category": "bar_scam",
+    "city": "Tokyo",
+    "patterns": [
+      "Documented by YouTuber Chris Broad (Abroad in Japan) — tourist lost $6,000 in one night",
+      "Combination of bar hopping with touts, spiked drinks, and credit card fraud",
+      "Touts lead victims to multiple venues, each adding charges",
+      "Credit card charged repeatedly at different establishments while victim is intoxicated"
+    ],
+    "sources": [
+      "https://www.abroadinjapan.com/content-607-japans-worst-tourist-scam-explained-6000-lost-in-a-day"
+    ],
+    "last_verified": "2026-03-27"
+  },
+  {
+    "name": "JTB Corporation",
+    "aliases": ["JTB", "JTB Corp", "株式会社JTB"],
+    "status": "safe",
+    "category": "tour",
+    "city": "nationwide",
+    "patterns": [
+      "Japan's largest travel agency, established 1912",
+      "Licensed and regulated by Japan Tourism Agency",
+      "Official partner for many Japanese attractions and events",
+      "Offices throughout Japan and internationally"
+    ],
+    "sources": [
+      "https://www.jtbcorp.jp/en/"
+    ],
+    "last_verified": "2026-03-27"
+  },
+  {
+    "name": "H.I.S. Co., Ltd.",
+    "aliases": ["HIS", "HIS Travel", "エイチ・アイ・エス", "H.I.S."],
+    "status": "safe",
+    "category": "tour",
+    "city": "nationwide",
+    "patterns": [
+      "Major Japanese travel agency founded 1980",
+      "Licensed by Japan Tourism Agency",
+      "Physical stores across Japan for in-person booking",
+      "Known for affordable tour packages and flight deals"
+    ],
+    "sources": [
+      "https://www.his-j.com/en/"
+    ],
+    "last_verified": "2026-03-27"
+  },
+  {
+    "name": "Klook",
+    "aliases": ["Klook Travel", "客路"],
+    "status": "safe",
+    "category": "ticket",
+    "city": "nationwide",
+    "patterns": [
+      "Hong Kong-based activity booking platform, largest in Asia",
+      "Secure encrypted payment processing",
+      "Official partner with many Japanese attractions for ticket sales",
+      "Good for JR passes, attraction tickets, and activity bookings"
+    ],
+    "sources": [
+      "https://www.klook.com/"
+    ],
+    "last_verified": "2026-03-27"
+  },
+  {
+    "name": "Viator (by TripAdvisor)",
+    "aliases": ["Viator", "Viator Tours"],
+    "status": "safe",
+    "category": "tour",
+    "city": "nationwide",
+    "patterns": [
+      "Owned by TripAdvisor, one of the world's largest tour booking platforms",
+      "Large verified review pool",
+      "Free cancellation on many bookings",
+      "Legitimate — but always check individual tour operator reviews"
+    ],
+    "sources": [
+      "https://www.viator.com/"
+    ],
+    "last_verified": "2026-03-27"
   }
 ]
