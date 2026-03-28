@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="sitemap" type="application/xml" href="/japan-scam-checker/sitemap.xml">
   <meta name="google" content="notranslate">
   <meta name="description" content="Check if a tour company, bar, taxi, or guide in Japan is safe before you book. Search our database of reported scams across Tokyo, Kyoto, Osaka and more.">
   <meta property="og:title" content="Japan Tour Scam Checker">
@@ -258,20 +259,7 @@
 
 </div>
 
-<script>
-  // Service Loop — Search Tracking
-  var GAS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxNgRSQnoevLcHrBPRtUSWEa5FOVikW8b5qH7Rv3aiK7KQ7a2dSKrGLVSgQxFNu9pBH/exec';
-  function trackEvent(service, query, status) {
-    if (!GAS_ENDPOINT || !query || !query.trim()) return;
-    var params = new URLSearchParams({
-      service: service,
-      query: query.trim().substring(0, 200),
-      status: status
-    });
-    var img = new Image();
-    img.src = GAS_ENDPOINT + '?' + params.toString();
-  }
-</script>
+<script src="track.js"></script>
 
 <footer>
   Data sourced from Tripadvisor, Reddit r/JapanTravel, Japan Today, Unseen Japan, and U.S. Embassy advisories. Updated weekly.<br>
