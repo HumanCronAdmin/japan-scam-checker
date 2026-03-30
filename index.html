@@ -1,428 +1,116 @@
 <!DOCTYPE html>
 <html lang="en" translate="no">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="impact-site-verification" value="9536cab7-fa07-456d-bf6c-87155bd594f2">
-  <link rel="sitemap" type="application/xml" href="/japan-scam-checker/sitemap.xml">
-  <meta name="google" content="notranslate">
-  <meta name="description" content="Check if a tour company, bar, taxi, or guide in Japan is safe before you book. Search our database of reported scams across Tokyo, Kyoto, Osaka and more.">
-  <meta property="og:title" content="Japan Tour Scam Checker">
-  <meta property="og:description" content="Check if a tour company, bar, taxi, or guide in Japan is safe before you book. Search our database of reported scams.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://humancronadmin.github.io/japan-scam-checker/">
-  <meta property="og:image" content="https://humancronadmin.github.io/japan-scam-checker/images/og-image.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://humancronadmin.github.io/japan-scam-checker/images/og-image.png">
-  <meta name="twitter:title" content="Japan Tour Scam Checker">
-  <meta name="twitter:description" content="Check if a tour company, bar, taxi, or guide in Japan is safe before you book.">
-  <meta name="keywords" content="Japan scam checker, Japan tour scam, Kabukicho bar scam, Roppongi scam, Tokyo scam, Kyoto scam, Osaka scam, Japan travel safety, tourist scam Japan, bar scam Japan, taxi scam Japan, ticket scam Japan">
-  <link rel="canonical" href="https://humancronadmin.github.io/japan-scam-checker/">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#1a1a2e">
-  <title>Japan Scam Checker — Is It Safe?</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f5f5f5; color: #222; }
-
-    header { background: #1a1a2e; color: white; padding: 32px 20px; text-align: center; }
-    header h1 { font-size: 1.8rem; margin-bottom: 8px; }
-    header p { color: #aaa; font-size: 0.95rem; }
-    .db-count { display: inline-block; background: rgba(255,255,255,0.1); padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; color: #ccc; margin-top: 12px; }
-
-    .container { max-width: 680px; margin: 0 auto; padding: 32px 20px; }
-
-    .search-box { display: flex; gap: 8px; margin-bottom: 16px; }
-    .search-box input {
-      flex: 1; padding: 14px 16px; border: 2px solid #ddd; border-radius: 8px;
-      font-size: 1rem; outline: none; transition: border 0.2s;
-    }
-    .search-box input:focus { border-color: #1a1a2e; }
-    .search-box button {
-      padding: 14px 24px; background: #1a1a2e; color: white; border: none;
-      border-radius: 8px; font-size: 1rem; cursor: pointer; min-height: 48px;
-    }
-    .search-box button:hover { background: #2d2d5e; }
-
-    .filters { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
-    .filter-btn {
-      padding: 8px 14px; border: 1px solid #ddd; border-radius: 20px;
-      background: white; font-size: 0.8rem; cursor: pointer; color: #555;
-      min-height: 44px; display: flex; align-items: center;
-    }
-    .filter-btn.active { background: #1a1a2e; color: white; border-color: #1a1a2e; }
-
-    .result { background: white; border-radius: 12px; padding: 24px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); display: none; }
-    .result.show { display: block; }
-
-    .badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; margin-bottom: 12px; }
-    .badge.danger  { background: #fee2e2; color: #dc2626; }
-    .badge.unknown { background: #fef9c3; color: #ca8a04; }
-    .badge.safe    { background: #dcfce7; color: #16a34a; }
-
-    .category-tag { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 0.75rem; background: #e8e8e8; color: #666; margin-left: 8px; }
-    .city-tag { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 0.75rem; background: #e0e7ff; color: #3730a3; margin-left: 4px; }
-
-    .result h2 { font-size: 1.2rem; margin-bottom: 8px; }
-    .result ul { margin: 12px 0 0 20px; }
-    .result li { margin-bottom: 6px; font-size: 0.95rem; color: #444; }
-
-    .sources { margin-top: 12px; font-size: 0.85rem; word-break: break-all; }
-    .sources a { color: #1a1a2e; }
-
-    .verified { margin-top: 10px; font-size: 0.8rem; color: #999; }
-
-    .browse-section { margin-bottom: 24px; }
-    .browse-section h3 { font-size: 1rem; margin-bottom: 12px; color: #555; }
-    .browse-list { display: none; }
-    .browse-list.show { display: block; }
-
-    .browse-item {
-      background: white; border-radius: 10px; padding: 14px 18px; margin-bottom: 8px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.06); cursor: pointer; transition: background 0.15s;
-    }
-    .browse-item:hover { background: #f0f0f0; }
-    .browse-item .item-name { font-weight: 600; font-size: 0.95rem; }
-    .browse-item .item-meta { font-size: 0.8rem; color: #888; margin-top: 4px; }
-
-    .cta { background: white; border-radius: 12px; padding: 24px; margin-top: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-    .cta h3 { margin-bottom: 12px; font-size: 1rem; }
-    .cta-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
-    .cta-btn {
-      padding: 10px 20px; border-radius: 8px; text-decoration: none;
-      font-size: 0.9rem; font-weight: bold; min-height: 44px; display: flex; align-items: center;
-    }
-    .cta-btn.getyourguide { background: #ff6d00; color: white; }
-    .cta-btn.viator       { background: #00a680; color: white; }
-
-    .report { margin-top: 32px; background: white; border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-    .report h3 { margin-bottom: 8px; }
-    .report p  { font-size: 0.9rem; color: #666; margin-bottom: 12px; }
-    .report a  { color: #1a1a2e; font-weight: bold; }
-
-    .common-scams { margin-top: 32px; background: white; border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-    .common-scams h3 { margin-bottom: 16px; font-size: 1.1rem; }
-    .scam-type { margin-bottom: 16px; }
-    .scam-type h4 { font-size: 0.95rem; margin-bottom: 4px; color: #1a1a2e; }
-    .scam-type p { font-size: 0.9rem; color: #555; line-height: 1.5; }
-
-    footer { text-align: center; padding: 32px 20px; color: #999; font-size: 0.85rem; }
-
-    @media (max-width: 480px) {
-      header { padding: 20px 16px; }
-      header h1 { font-size: 1.4rem; }
-      header p { font-size: 0.85rem; }
-      .container { padding: 20px 16px; }
-      .search-box { flex-direction: column; }
-      .search-box button { width: 100%; }
-      .filters { gap: 6px; }
-      .filter-btn { padding: 8px 12px; font-size: 0.75rem; }
-      .result { padding: 16px; }
-      .result h2 { font-size: 1.05rem; }
-      .cta { padding: 16px; }
-      .cta-buttons { flex-direction: column; }
-      .cta-btn { text-align: center; width: 100%; justify-content: center; }
-      .report { padding: 16px; }
-      .common-scams { padding: 16px; }
-      footer { padding: 20px 16px; }
-    }
-
-    .sr-only {
-      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
-      overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
-    }
-  </style>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Japan Tour Scam Checker",
-    "url": "https://humancronadmin.github.io/japan-scam-checker/",
-    "description": "Check if a tour company, bar, taxi, or guide in Japan is safe before you book. Search our database of reported scams across Tokyo, Kyoto, Osaka and more.",
-    "applicationCategory": "TravelApplication",
-    "operatingSystem": "Any",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    }
-  }
-  </script>
-  <!-- Google Analytics 4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H1N5PR9Y0H"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-H1N5PR9Y0H');
-  </script>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="impact-site-verification" value="9536cab7-fa07-456d-bf6c-87155bd594f2"><link rel="sitemap" type="application/xml" href="/japan-scam-checker/sitemap.xml"><meta name="google" content="notranslate"><meta name="description" content="Check if a tour company, bar, taxi, or guide in Japan is safe before you book. Search our database of reported scams across Tokyo, Kyoto, Osaka and more."><meta property="og:title" content="Japan Tour Scam Checker">
+<meta property="og:description" content="Check if a tour company, bar, taxi, or guide in Japan is safe before you book. Search our database of reported scams."><meta property="og:type" content="website"><meta property="og:url" content="https://humancronadmin.github.io/japan-scam-checker/"><meta property="og:image" content="https://humancronadmin.github.io/japan-scam-checker/images/og-image.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://humancronadmin.github.io/japan-scam-checker/images/og-image.png">
+<meta name="twitter:title" content="Japan Tour Scam Checker"><meta name="twitter:description" content="Check if a tour company, bar, taxi, or guide in Japan is safe before you book."><meta name="keywords" content="Japan scam checker, Japan tour scam, Kabukicho bar scam, Roppongi scam, Tokyo scam, Kyoto scam, Osaka scam, Japan travel safety, tourist scam Japan, bar scam Japan, taxi scam Japan, ticket scam Japan"><link rel="canonical" href="https://humancronadmin.github.io/japan-scam-checker/"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1a1a2e"><title>Japan Scam Checker — Is It Safe?</title>
+<script type="application/ld+json">
+{"@context": "https://schema.org","@type": "WebApplication","name": "Japan Tour Scam Checker","url": "https://humancronadmin.github.io/japan-scam-checker/","description": "Check if a tour company, bar, taxi, or guide in Japan is safe before you book. Search our database of reported scams across Tokyo, Kyoto, Osaka and more.","applicationCategory": "TravelApplication","operatingSystem": "Any","offers": {"@type": "Offer","price": "0","priceCurrency": "USD"}}
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H1N5PR9Y0H"></script>
+<script>
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-H1N5PR9Y0H');
+</script>
+<style>*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f5f5f5;color:#222;}
+header{background:#1a1a2e;color:white;padding:32px 20px;text-align:center;}
+header h1{font-size:1.8rem;margin-bottom:8px;}
+header p{color:#aaa;font-size:0.95rem;}
+.db-count{display:inline-block;background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:20px;font-size:0.85rem;color:#ccc;margin-top:12px;}
+.container{max-width:680px;margin:0 auto;padding:32px 20px;}
+.search-box{display:flex;gap:8px;margin-bottom:16px;}
+.search-box input{flex:1;padding:14px 16px;border:2px solid #ddd;border-radius:8px;font-size:1rem;outline:none;transition:border 0.2s;}
+.search-box input:focus{border-color:#1a1a2e;}
+.search-box button{padding:14px 24px;background:#1a1a2e;color:white;border:none;border-radius:8px;font-size:1rem;cursor:pointer;min-height:48px;}
+.search-box button:hover{background:#2d2d5e;}
+.filters{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap;}
+.filter-btn{padding:8px 14px;border:1px solid #ddd;border-radius:20px;background:white;font-size:0.8rem;cursor:pointer;color:#555;min-height:44px;display:flex;align-items:center;}
+.filter-btn.active{background:#1a1a2e;color:white;border-color:#1a1a2e;}
+.result{background:white;border-radius:12px;padding:24px;margin-bottom:16px;box-shadow:0 2px 8px rgba(0,0,0,0.08);display:none;}
+.result.show{display:block;}
+.badge{display:inline-block;padding:4px 12px;border-radius:20px;font-size:0.85rem;font-weight:bold;margin-bottom:12px;}
+.badge.danger{background:#fee2e2;color:#dc2626;}
+.badge.unknown{background:#fef9c3;color:#ca8a04;}
+.badge.safe{background:#dcfce7;color:#16a34a;}
+.category-tag{display:inline-block;padding:2px 8px;border-radius:10px;font-size:0.75rem;background:#e8e8e8;color:#666;margin-left:8px;}
+.city-tag{display:inline-block;padding:2px 8px;border-radius:10px;font-size:0.75rem;background:#e0e7ff;color:#3730a3;margin-left:4px;}
+.result h2{font-size:1.2rem;margin-bottom:8px;}
+.result ul{margin:12px 0 0 20px;}
+.result li{margin-bottom:6px;font-size:0.95rem;color:#444;}
+.sources{margin-top:12px;font-size:0.85rem;word-break:break-all;}
+.sources a{color:#1a1a2e;}
+.verified{margin-top:10px;font-size:0.8rem;color:#999;}
+.browse-section{margin-bottom:24px;}
+.browse-section h3{font-size:1rem;margin-bottom:12px;color:#555;}
+.browse-list{display:none;}
+.browse-list.show{display:block;}
+.browse-item{background:white;border-radius:10px;padding:14px 18px;margin-bottom:8px;box-shadow:0 1px 4px rgba(0,0,0,0.06);cursor:pointer;transition:background 0.15s;}
+.browse-item:hover{background:#f0f0f0;}
+.browse-item .item-name{font-weight:600;font-size:0.95rem;}
+.browse-item .item-meta{font-size:0.8rem;color:#888;margin-top:4px;}
+.cta{background:white;border-radius:12px;padding:24px;margin-top:8px;box-shadow:0 2px 8px rgba(0,0,0,0.08);}
+.cta h3{margin-bottom:12px;font-size:1rem;}
+.cta-buttons{display:flex;gap:10px;flex-wrap:wrap;}
+.cta-btn{padding:10px 20px;border-radius:8px;text-decoration:none;font-size:0.9rem;font-weight:bold;min-height:44px;display:flex;align-items:center;}
+.cta-btn.getyourguide{background:#ff6d00;color:white;}
+.cta-btn.viator{background:#00a680;color:white;}
+.report{margin-top:32px;background:white;border-radius:12px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);}
+.report h3{margin-bottom:8px;}
+.report p{font-size:0.9rem;color:#666;margin-bottom:12px;}
+.report a{color:#1a1a2e;font-weight:bold;}
+.common-scams{margin-top:32px;background:white;border-radius:12px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);}
+.common-scams h3{margin-bottom:16px;font-size:1.1rem;}
+.scam-type{margin-bottom:16px;}
+.scam-type h4{font-size:0.95rem;margin-bottom:4px;color:#1a1a2e;}
+.scam-type p{font-size:0.9rem;color:#555;line-height:1.5;}
+footer{text-align:center;padding:32px 20px;color:#999;font-size:0.85rem;}
+@media (max-width:480px){header{padding:20px 16px;}
+header h1{font-size:1.4rem;}
+header p{font-size:0.85rem;}
+.container{padding:20px 16px;}
+.search-box{flex-direction:column;}
+.search-box button{width:100%;}
+.filters{gap:6px;}
+.filter-btn{padding:8px 12px;font-size:0.75rem;}
+.result{padding:16px;}
+.result h2{font-size:1.05rem;}
+.cta{padding:16px;}
+.cta-buttons{flex-direction:column;}
+.cta-btn{text-align:center;width:100%;justify-content:center;}
+.report{padding:16px;}
+.common-scams{padding:16px;}
+footer{padding:20px 16px;}
+}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}</style>
 </head>
 <body>
-
-<header>
-  <h1>Japan Tour Scam Checker</h1>
-  <p>Check if a tour company, bar, taxi, or guide in Japan is safe before you book.</p>
-  <div class="db-count" id="db-count"></div>
-</header>
-
-<div class="container">
-
-  <div class="search-box">
-    <label for="query" class="sr-only">Company or scam name</label>
-    <input type="text" id="query" placeholder="Enter company or scam name" maxlength="200" />
-    <button onclick="checkScam()">Check</button>
-  </div>
-
-  <div class="filters">
-    <button class="filter-btn active" data-filter="all" onclick="setFilter('all', this)">All</button>
-    <button class="filter-btn" data-filter="bar_scam" onclick="setFilter('bar_scam', this)">Bar / Nightlife</button>
-    <button class="filter-btn" data-filter="street_scam" onclick="setFilter('street_scam', this)">Street</button>
-    <button class="filter-btn" data-filter="tour_scam" onclick="setFilter('tour_scam', this)">Tour</button>
-    <button class="filter-btn" data-filter="taxi_scam" onclick="setFilter('taxi_scam', this)">Taxi</button>
-    <button class="filter-btn" data-filter="ticket_scam" onclick="setFilter('ticket_scam', this)">Ticket</button>
-    <button class="filter-btn" data-filter="accommodation_scam" onclick="setFilter('accommodation_scam', this)">Hotel</button>
-    <button class="filter-btn" data-filter="shopping_scam" onclick="setFilter('shopping_scam', this)">Shopping</button>
-  </div>
-
-  <!-- Search results -->
-  <div class="result" id="result-danger">
-    <span class="badge danger">WARNING: REPORTED SCAM</span>
-    <h2 id="danger-name"></h2>
-    <span class="category-tag" id="danger-category"></span>
-    <span class="city-tag" id="danger-city"></span>
-    <ul id="danger-patterns"></ul>
-    <div class="sources" id="danger-sources"></div>
-    <div class="verified" id="danger-verified"></div>
-  </div>
-
-  <div class="result" id="result-safe">
-    <span class="badge safe">VERIFIED SAFE</span>
-    <h2 id="safe-name"></h2>
-    <ul id="safe-patterns"></ul>
-    <div class="sources" id="safe-sources"></div>
-    <div class="verified" id="safe-verified"></div>
-  </div>
-
-  <div class="result" id="result-unknown">
-    <span class="badge unknown">NOT IN DATABASE</span>
-    <h2 id="unknown-name"></h2>
-    <p style="margin-top:8px;color:#666;font-size:.95rem;">We couldn't find this in our database. That doesn't mean it's safe. Verify using these steps:</p>
-    <ul style="margin:12px 0 0 20px;">
-      <li>Search on <a href="https://www.tripadvisor.com" target="_blank" rel="noopener noreferrer">Tripadvisor</a> and <a href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer">Google Maps</a></li>
-      <li>Check if the guide holds a <a href="https://www.japan.travel/en/plan/how-to-book-a-certified-tour-guide/" target="_blank" rel="noopener noreferrer">JNTO Licensed Guide certificate</a></li>
-      <li>Never pay by wire transfer — use credit card only</li>
-    </ul>
-  </div>
-
-  <div class="cta" id="cta-box" style="display:none;">
-    <h3>Book safely through verified platforms:</h3>
-    <div class="cta-buttons">
-      <a class="cta-btn getyourguide" href="https://www.getyourguide.com/japan-l179/" target="_blank" rel="noopener noreferrer">GetYourGuide Japan</a>
-      <a class="cta-btn viator" href="https://www.viator.com/Japan/d15-ttd" target="_blank" rel="noopener noreferrer">Viator Japan Tours</a>
-    </div>
-  </div>
-
-  <!-- Browse all scams -->
-  <div class="browse-section">
-    <h3 id="browse-title">Browse all reported scams</h3>
-    <div class="browse-list show" id="browse-list"></div>
-  </div>
-
-  <!-- Common scam types explainer (SEO) -->
-  <div class="common-scams">
-    <h3>Common Scam Types in Japan</h3>
-    <div class="scam-type">
-      <h4>Bar & Nightlife Scams</h4>
-      <p>Street touts in Kabukicho, Roppongi, and Dotonbori lure tourists into bars with cheap drink promises. Bills arrive 5-10x higher. Some victims have drinks spiked and credit cards charged while unconscious. The U.S. Embassy has issued official warnings. Never follow touts off the street.</p>
-    </div>
-    <div class="scam-type">
-      <h4>Street Scams</h4>
-      <p>Fake monks giving "blessed" bracelets then demanding donations. Fake charity petitions. "Volunteer guides" who demand payment after. A well-known scammer on Tokyo trains claims to have lost his wallet. If it feels pushy, walk away.</p>
-    </div>
-    <div class="scam-type">
-      <h4>Taxi & Transport Scams</h4>
-      <p>Unlicensed "shirotaku" (white taxis) at airports charge 3-5x normal fares with no insurance. Legal taxis in Japan always have green license plates and illuminated roof signs. Use official taxi stands only.</p>
-    </div>
-    <div class="scam-type">
-      <h4>Ticket Scams</h4>
-      <p>Scalper sites sell fake tickets to Ghibli Museum, Nintendo Museum, and USJ at inflated prices. Many require ID matching the ticket name. Always buy from official sites or verified platforms like Klook.</p>
-    </div>
-    <div class="scam-type">
-      <h4>Accommodation Scams</h4>
-      <p>Fake hotel listings on Booking.com with stolen photos. Illegal Airbnb rentals that ask you to "sneak in." Always check reviews, verify the property exists on Google Maps, and book through platforms with buyer protection.</p>
-    </div>
-  </div>
-
-  <div class="report">
-    <h3>Know a scam not listed here?</h3>
-    <p>Help protect other travelers by reporting it.</p>
-    <a href="https://forms.gle/p7B2kSSQvhmNrB6V8" target="_blank" rel="noopener noreferrer">Submit a scam report</a>
-  </div>
-
-</div>
-
+<header><h1>Japan Tour Scam Checker</h1><p>Check if a tour company, bar, taxi, or guide in Japan is safe before you book.</p></header><div class="container"><div class="search-box"><label for="query" class="sr-only">Company or scam name</label>
+<input type="text" id="query" placeholder="Enter company or scam name" maxlength="200" /><button onclick="checkScam()">Check</button></div><div class="filters"><button class="filter-btn active" data-filter="all" onclick="setFilter('all', this)">All</button><button class="filter-btn" data-filter="bar_scam" onclick="setFilter('bar_scam', this)">Bar / Nightlife</button><button class="filter-btn" data-filter="street_scam" onclick="setFilter('street_scam', this)">Street</button>
+<button class="filter-btn" data-filter="tour_scam" onclick="setFilter('tour_scam', this)">Tour</button><button class="filter-btn" data-filter="taxi_scam" onclick="setFilter('taxi_scam', this)">Taxi</button><button class="filter-btn" data-filter="ticket_scam" onclick="setFilter('ticket_scam', this)">Ticket</button><button class="filter-btn" data-filter="accommodation_scam" onclick="setFilter('accommodation_scam', this)">Hotel</button>
+<button class="filter-btn" data-filter="shopping_scam" onclick="setFilter('shopping_scam', this)">Shopping</button></div><!-- Search results --><div class="result" id="result-danger"><span class="badge danger">WARNING: REPORTED SCAM</span><h2 id="danger-name"></h2><span class="category-tag" id="danger-category"></span><span class="city-tag" id="danger-city"></span></div><div class="result" id="result-safe">
+<span class="badge safe">VERIFIED SAFE</span><h2 id="safe-name"></h2></div><div class="result" id="result-unknown"><span class="badge unknown">NOT IN DATABASE</span><h2 id="unknown-name"></h2><p style="margin-top:8px;color:#666;font-size:.95rem;">We couldn't find this in our database. That doesn't mean it's safe. Verify using these steps:</p><ul style="margin:12px 0 0 20px;">
+<li>Search on  and <a href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer">Google Maps</a></li><li>Check if the guide holds a <a href="https://www.japan.travel/en/plan/how-to-book-a-certified-tour-guide/" target="_blank" rel="noopener noreferrer">JNTO Licensed Guide certificate</a></li><li>Never pay by wire transfer — use credit card only</li></ul></div>
+<div class="cta" id="cta-box" style="display:none;"><h3>Book safely through verified platforms:</h3></div><!-- Browse all scams --><div class="browse-section"><h3 id="browse-title">Browse all reported scams</h3>
+</div><!-- Common scam types explainer (SEO) --><div class="common-scams"><h3>Common Scam Types in Japan</h3><div class="scam-type"><h4>Bar & Nightlife Scams</h4><p>Street touts in Kabukicho, Roppongi, and Dotonbori lure tourists into bars with cheap drink promises. Bills arrive 5-10x higher. Some victims have drinks spiked and credit cards charged while unconscious. The U.S. Embassy has issued official warnings. Never follow touts off the street.</p></div>
+<div class="scam-type"><h4>Street Scams</h4><p>Fake monks giving "blessed" bracelets then demanding donations. Fake charity petitions. "Volunteer guides" who demand payment after. A well-known scammer on Tokyo trains claims to have lost his wallet. If it feels pushy, walk away.</p></div><div class="scam-type"><h4>Taxi & Transport Scams</h4><p>Unlicensed "shirotaku" (white taxis) at airports charge 3-5x normal fares with no insurance. Legal taxis in Japan always have green license plates and illuminated roof signs. Use official taxi stands only.</p></div><div class="scam-type">
+<h4>Ticket Scams</h4><p>Scalper sites sell fake tickets to Ghibli Museum, Nintendo Museum, and USJ at inflated prices. Many require ID matching the ticket name. Always buy from official sites or verified platforms like Klook.</p></div><div class="scam-type"><h4>Accommodation Scams</h4><p>Fake hotel listings on Booking.com with stolen photos. Illegal Airbnb rentals that ask you to "sneak in." Always check reviews, verify the property exists on Google Maps, and book through platforms with buyer protection.</p></div></div><div class="report"><h3>Know a scam not listed here?</h3>
+<p>Help protect other travelers by reporting it.</p><a href="https://forms.gle/p7B2kSSQvhmNrB6V8" target="_blank" rel="noopener noreferrer">Submit a scam report</a></div></div><footer>Data sourced from Tripadvisor, Reddit r/JapanTravel, Japan Today, Unseen Japan, and U.S. Embassy advisories. Updated weekly.<br><span id="footer-count"></span></footer>
 <script src="track.js"></script>
-
-<footer>
-  Data sourced from Tripadvisor, Reddit r/JapanTravel, Japan Today, Unseen Japan, and U.S. Embassy advisories. Updated weekly.<br>
-  <span id="footer-count"></span>
-</footer>
-
 <script>
-  let scamDB = [];
-  let currentFilter = 'all';
-
-  fetch('./data/scams.json')
-    .then(r => r.json())
-    .then(data => {
-      scamDB = data;
-      const dangerCount = data.filter(s => s.status === 'danger').length;
-      const safeCount = data.filter(s => s.status === 'safe').length;
-      document.getElementById('db-count').textContent = `Checking against ${dangerCount} reported scams + ${safeCount} verified safe companies`;
-      document.getElementById('footer-count').textContent = `Database: ${dangerCount} scams, ${safeCount} verified safe. Last updated: 2026-03-27.`;
-      renderBrowseList();
-    });
-
-  document.getElementById('query').addEventListener('keydown', e => {
-    if (e.key === 'Enter') checkScam();
-  });
-
-  const categoryLabels = {
-    bar_scam: 'Bar / Nightlife',
-    street_scam: 'Street Scam',
-    tour_scam: 'Tour Scam',
-    taxi_scam: 'Taxi / Transport',
-    ticket_scam: 'Ticket Scam',
-    accommodation_scam: 'Accommodation',
-    shopping_scam: 'Shopping',
-    tour: 'Tour Company',
-    ticket: 'Ticket Platform'
-  };
-
-  function setFilter(filter, btn) {
-    currentFilter = filter;
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    renderBrowseList();
-  }
-
-  function renderBrowseList() {
-    const list = document.getElementById('browse-list');
-    list.innerHTML = '';
-
-    const filtered = scamDB.filter(s => {
-      if (currentFilter === 'all') return s.status === 'danger';
-      return s.status === 'danger' && s.category === currentFilter;
-    });
-
-    if (filtered.length === 0) {
-      list.innerHTML = '<p style="color:#999;font-size:0.9rem;padding:12px 0;">No scams in this category yet.</p>';
-      return;
-    }
-
-    filtered.forEach(s => {
-      const item = document.createElement('div');
-      item.className = 'browse-item';
-      item.onclick = () => {
-        document.getElementById('query').value = s.name;
-        checkScam();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      };
-      item.innerHTML = `
-        <div class="item-name">${s.name}</div>
-        <div class="item-meta">${categoryLabels[s.category] || s.category} · ${s.city} · ${s.patterns[0]}</div>
-      `;
-      list.appendChild(item);
-    });
-
-    document.getElementById('browse-title').textContent = `Browse all reported scams (${filtered.length})`;
-  }
-
-  function checkScam() {
-    const q = document.getElementById('query').value.trim().toLowerCase();
-    if (!q) return;
-
-    document.getElementById('result-danger').classList.remove('show');
-    document.getElementById('result-safe').classList.remove('show');
-    document.getElementById('result-unknown').classList.remove('show');
-    document.getElementById('cta-box').style.display = 'none';
-
-    const match = scamDB.find(s => {
-      const name = s.name.toLowerCase();
-      return name.includes(q) || q.includes(name) ||
-        s.aliases.some(a => {
-          const al = a.toLowerCase();
-          return al.includes(q) || q.includes(al);
-        }) ||
-        q.split(/\s+/).every(word => name.includes(word));
-    });
-
-    if (match && match.status === 'danger') {
-      document.getElementById('danger-name').textContent = match.name;
-      document.getElementById('danger-category').textContent = categoryLabels[match.category] || match.category;
-      document.getElementById('danger-city').textContent = match.city;
-      const ul = document.getElementById('danger-patterns');
-      ul.innerHTML = '';
-      match.patterns.forEach(p => {
-        const li = document.createElement('li');
-        li.textContent = p;
-        ul.appendChild(li);
-      });
-      const src = document.getElementById('danger-sources');
-      src.innerHTML = '';
-      src.appendChild(document.createTextNode('Sources: '));
-      match.sources.forEach((u, i) => {
-        if (i > 0) src.appendChild(document.createTextNode(', '));
-        const a = document.createElement('a');
-        a.href = u;
-        a.target = '_blank';
-        a.rel = 'noopener noreferrer';
-        a.textContent = new URL(u).hostname.replace('www.', '');
-        src.appendChild(a);
-      });
-      document.getElementById('danger-verified').textContent = `Last verified: ${match.last_verified}`;
-      document.getElementById('result-danger').classList.add('show');
-      trackEvent('japan-scam-checker', q, 'danger');
-    } else if (match && match.status === 'safe') {
-      document.getElementById('safe-name').textContent = match.name;
-      const ul = document.getElementById('safe-patterns');
-      ul.innerHTML = '';
-      match.patterns.forEach(p => {
-        const li = document.createElement('li');
-        li.textContent = p;
-        ul.appendChild(li);
-      });
-      const src = document.getElementById('safe-sources');
-      src.innerHTML = '';
-      src.appendChild(document.createTextNode('Official site: '));
-      match.sources.forEach((u, i) => {
-        if (i > 0) src.appendChild(document.createTextNode(', '));
-        const a = document.createElement('a');
-        a.href = u;
-        a.target = '_blank';
-        a.rel = 'noopener noreferrer';
-        a.textContent = u;
-        src.appendChild(a);
-      });
-      document.getElementById('safe-verified').textContent = `Last verified: ${match.last_verified}`;
-      document.getElementById('result-safe').classList.add('show');
-      trackEvent('japan-scam-checker', q, 'safe');
-    } else {
-      document.getElementById('unknown-name').textContent = `"${document.getElementById('query').value.trim()}"`;
-      document.getElementById('result-unknown').classList.add('show');
-      trackEvent('japan-scam-checker', q, 'not_found');
-    }
-
-    document.getElementById('cta-box').style.display = 'block';
-  }
+let scamDB = [];let currentFilter = 'all';fetch('./data/scams.json').then(r => r.json()).then(data => {scamDB = data;const dangerCount = data.filter(s => s.status === 'danger').length;const safeCount = data.filter(s => s.status === 'safe').length;document.getElementById('db-count').textContent = `Checking against ${dangerCount} reported scams + ${safeCount} verified safe companies`;document.getElementById('footer-count').textContent = `Database: ${dangerCount} scams, ${safeCount} verified safe. Last updated: 2026-03-27.`;renderBrowseList();});
+document.getElementById('query').addEventListener('keydown', e => {if (e.key === 'Enter') checkScam();});const categoryLabels = {bar_scam: 'Bar / Nightlife',street_scam: 'Street Scam',tour_scam: 'Tour Scam',taxi_scam: 'Taxi / Transport',ticket_scam: 'Ticket Scam',accommodation_scam: 'Accommodation',shopping_scam: 'Shopping',tour: 'Tour Company',ticket: 'Ticket Platform'};function setFilter(filter, btn) {currentFilter = filter;document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));btn.classList.add('active');renderBrowseList();}function renderBrowseList() {
+const list = document.getElementById('browse-list');list.innerHTML = '';const filtered = scamDB.filter(s => {if (currentFilter === 'all') return s.status === 'danger';return s.status === 'danger' && s.category === currentFilter;});if (filtered.length === 0) {list.innerHTML = '<p style="color:#999;font-size:0.9rem;padding:12px 0;">No scams in this category yet.</p>';return;}filtered.forEach(s => {const item = document.createElement('div');item.className = 'browse-item';item.onclick = () => {document.getElementById('query').value = s.name;checkScam();
+window.scrollTo({ top: 0, behavior: 'smooth' });};item.innerHTML = `<div class="item-name">${s.name}</div><div class="item-meta">${categoryLabels[s.category] || s.category} · ${s.city} · ${s.patterns[0]}</div>`;list.appendChild(item);});document.getElementById('browse-title').textContent = `Browse all reported scams (${filtered.length})`;}function checkScam() {const q = document.getElementById('query').value.trim().toLowerCase();if (!q) return;document.getElementById('result-danger').classList.remove('show');document.getElementById('result-safe').classList.remove('show');
+document.getElementById('result-unknown').classList.remove('show');document.getElementById('cta-box').style.display = 'none';const match = scamDB.find(s => {const name = s.name.toLowerCase();return name.includes(q) || q.includes(name) ||s.aliases.some(a => {const al = a.toLowerCase();return al.includes(q) || q.includes(al);}) ||q.split(/\s+/).every(word => name.includes(word));});if (match && match.status === 'danger') {document.getElementById('danger-name').textContent = match.name;document.getElementById('danger-category').textContent = categoryLabels[match.category] || match.category;
+document.getElementById('danger-city').textContent = match.city;const ul = document.getElementById('danger-patterns');ul.innerHTML = '';match.patterns.forEach(p => {const li = document.createElement('li');li.textContent = p;ul.appendChild(li);});const src = document.getElementById('danger-sources');src.innerHTML = '';src.appendChild(document.createTextNode('Sources: '));match.sources.forEach((u, i) => {if (i > 0) src.appendChild(document.createTextNode(', '));const a = document.createElement('a');a.href = u;a.target = '_blank';a.rel = 'noopener noreferrer';
+a.textContent = new URL(u).hostname.replace('www.', '');src.appendChild(a);});document.getElementById('danger-verified').textContent = `Last verified: ${match.last_verified}`;document.getElementById('result-danger').classList.add('show');trackEvent('japan-scam-checker', q, 'danger');} else if (match && match.status === 'safe') {document.getElementById('safe-name').textContent = match.name;const ul = document.getElementById('safe-patterns');ul.innerHTML = '';match.patterns.forEach(p => {const li = document.createElement('li');li.textContent = p;ul.appendChild(li);});
+const src = document.getElementById('safe-sources');src.innerHTML = '';src.appendChild(document.createTextNode('Official site: '));match.sources.forEach((u, i) => {if (i > 0) src.appendChild(document.createTextNode(', '));const a = document.createElement('a');a.href = u;a.target = '_blank';a.rel = 'noopener noreferrer';a.textContent = u;src.appendChild(a);});document.getElementById('safe-verified').textContent = `Last verified: ${match.last_verified}`;document.getElementById('result-safe').classList.add('show');trackEvent('japan-scam-checker', q, 'safe');} else {
+document.getElementById('unknown-name').textContent = `"${document.getElementById('query').value.trim()}"`;document.getElementById('result-unknown').classList.add('show');trackEvent('japan-scam-checker', q, 'not_found');}document.getElementById('cta-box').style.display = 'block';}
 </script>
-
 <script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js');
-  }
+if ('serviceWorker' in navigator) {navigator.serviceWorker.register('sw.js');}
 </script>
-
 </body>
 </html>
