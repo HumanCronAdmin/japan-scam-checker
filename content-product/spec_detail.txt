@@ -1,0 +1,47 @@
+# Japan Safety Guide — Chapter詳細
+
+## Ch1: How Scams Work in Japan（3p）
+1.1 Bar & Nightlife — ぼったくり手口、被害額260万〜$10,000、歌舞伎町15人逮捕
+1.2 Street — 偽僧侶、偽チャリティ、電車内「財布なくした」詐欺
+1.3 Taxi & Transport — 白タク、空港勧誘
+1.4 Ticket — ジブリ/任天堂/USJ偽チケット、転売サイト
+1.5 Accommodation — Booking.com幽霊ホテル、違法Airbnb
+1.6 Digital (2024-2026 NEW) — QRコード詐欺、SNS投資詐欺、万博偽サイト
+
+## Ch2: Danger Zones（4p）
+Tokyo: 歌舞伎町(ぼったくり/アプリ誘導) / 六本木(ドリンクスパイキング・米大使館警告) / 渋谷(客引き/ハロウィン) / 池袋(違法キャバ)
+Osaka: 道頓堀(チャリティ詐欺/ぼったくり) / 新世界(夜間客引き)
+Kyoto: 金閣寺(偽ガイド・市警告看板) / 人力車不正 / 500ウォンすり替え / 祇園写真トラブル
+
+## Ch3: Known Scam Database（4p）
+scams.json 16件をテーブル（名前/別名/カテゴリ/都市/手口/ソース）
+各エントリに「What to do」追加 + QRコードでオンラインDB連携
+
+## Ch4: Safe Alternatives（2p）
+4.1 認定旅行会社（JTB、H.I.S.）
+4.2 オンライン予約: GetYourGuide/Viator/Klook（各アフィリンク）
+4.3 正規チケット購入先（ジブリ/USJ/Nintendo公式URL）
+
+## Ch5: What to Do If Scammed（3p）
+Step 1: 安全確保 → Step 2: 証拠保全 → Step 3: 警察（交番/被害届/通訳サービス）
+→ Step 4: カード会社（チャージバック）→ Step 5: 大使館（パスポート紛失時）
+
+## Ch6: Emergency Contacts（2p）
+110/119/118 / Japan Visitor Hotline 050-3816-2787（24h多言語）
+8カ国大使館（US/UK/AU/CA/FR/DE/CN/KR）/ 法テラス / カード各社連絡先
+
+## Ch7: Safety Phrases（2p）
+警察関連9+安全緊急10=19フレーズ（日本語/ローマ字/英語）
+japan-emergency-phrasesから流用
+
+## Ch8: Seasonal Warnings（2p）
+花見3-4月(スリ置き引き) / 夏祭7-8月(偽チケ混雑) / ハロウィン10月(渋谷規制スリ) / 年末1月(初詣スリ架空イベント)
+
+## Ch9: Quick Reference Card（1p・印刷携帯用）
+緊急番号3つ / Visitor Hotline / 3フレーズ / 「緑ナンバー=合法タクシー」 / scam-checker QR
+
+## データソース
+既存: scams.json(16件+安全4件) / index.html(5種解説) / emergency-phrases(40フレーズ中19使用)
+追加リサーチ: 東京4区/大阪2区/京都5事例 / 大使館8カ国 / 被害届手順 / Visitor Hotline / 季節別4シーズン / 2024-2026最新詐欺
+
+ソースURL: 警察庁統計 / 米国大使館警告 / Japan Today / Unseen Japan / GaijinPot / SoraNews24 / TripAdvisor / 各県警多言語パンフ
